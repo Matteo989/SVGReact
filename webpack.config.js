@@ -8,11 +8,15 @@ const env = process.env.NODE_ENV;
 
 let config =
 {
-    entry: "./src/index.jsx",
+    context: path.resolve(__dirname, 'src'),
+    entry: {
+        bundle: "./index.jsx",
+        styles: './stylesheets/styles.scss'
+    },
     output:
     {
-    	path: path.resolve(__dirname, "./public/assets"),
-    	filename: "./js/bundle.js"
+    	path: path.resolve(__dirname, "./public"),
+    	filename: "assets/js/[name].js"
     },
     module:
     {
@@ -31,11 +35,10 @@ let config =
 		}]
     },
     plugins: [
-    	new ExtractTextWebpackPlugin("./stylesheets/styles.css")
+    	new ExtractTextWebpackPlugin("assets/stylesheets/styles.css")
     ],
     devServer:
     {
-    	publicPath: "/assets/",
 		contentBase: path.resolve(__dirname, "./public"),
 		historyApiFallback: true,
 		inline: true,
