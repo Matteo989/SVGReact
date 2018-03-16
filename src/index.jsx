@@ -56,9 +56,9 @@ const element = (
                 <button id="border_white">o</button>
                 <br />
                 Style : 
-                <button id="droit" >Continu</button> 
+                <button id="droit">Continu</button> 
                 <button id="dash1">Pointillés</button>
-                <button id="dash2" >Espacés</button>
+                <button id="dash2">Espacés</button>
                 <button id="dash3">Dessin</button>
                 <hr />
             </div>
