@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV;
 
 let config =
 {
-    entry: "./src/index.js",
+    entry: "./src/index.jsx",
     output:
     {
     	path: path.resolve(__dirname, "./public/assets"),
@@ -18,7 +18,7 @@ let config =
     {
         rules:
         [{
-        	test: /\.js$/,
+        	test: /\.(js|jsx)$/,
         	exclude: /node_modules/,
         	loader: "babel-loader"
         },

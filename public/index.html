@@ -10,66 +10,9 @@
         <link rel="stylesheet" href="assets/stylesheets/styles.css">
     </head>
     <body>
-        <h1>My Drawings</h1>
-        <p id="coordo"></p>
-        <div id="gauche">
-            <script type="text/javascript" src="./assets/js/bundle.js"></script>
-            <svg id="svg" width=100% height=100%>
-                
-            </svg>
+        <div id="root">
+            
         </div>
-        <div id="droite">
-            <h2>Formes</h2>
-            <button id="rect">Rectangle</button>
-            <button id="square">Carré</button>
-            <button id="circle">Cercle</button>
-            <button id="ellipse">Ellipse</button>
-            <button id="ligne">Ligne</button>
-            <button id="polyline">Lignes Multiples</button>
-            <button id="polygone">Polygone</button>
-            </ul>
-            <hr />
-            <h2>Paramètres</h2>
-            <button id="color">Changer la couleur</button>
-            <br />
-            <div id="couleur" style="display: none;">
-                <p>Cliquez sur les boutons ci-dessous pour changer la couleur de la forme sélectionnée</p>
-                <button id="grey" style="background-color: grey; color: grey">o</button>
-                <button id="red" style="background-color: red; color: red">o</button>
-                <button id="green" style="background-color: green; color: green">o</button>
-                <button id="blue" style="background-color: blue; color: blue">o</button>
-                <button id="yellow" style="background-color: yellow; color: yellow">o</button>
-                <button id="black" style="background-color: black; color: black">o</button>                
-                <button id="white" style="background-color: white; color: white">o</button>
-                <hr />
-            </div>
-            <button id="rotate">Tourner la forme</button>
-            <br />      
-            <button id="border">Modifier la bordure</button>
-            <br />
-            <div id="epais" style="display: none;">
-                <p>Ajustez la taille, la couleur et le style de la bordure de la forme sélectionnée</p>
-                Taille : 
-                <button id="moins">-</button> <!-- stroke-width-1 -->
-                <button id="plus">+</button>
-                <br />
-                Couleur :
-                <button id="border_grey" style="background-color: grey; color: grey">o</button>
-                <button id="border_red" style="background-color: red; color: red">o</button>
-                <button id="border_green" style="background-color: green; color: green">o</button>
-                <button id="border_blue" style="background-color: blue; color: blue">o</button>
-                <button id="border_yellow" style="background-color: yellow; color: yellow">o</button>
-                <button id="border_black" style="background-color: black; color: black">o</button>                
-                <button id="border_white" style="background-color: white; color: white">o</button>
-                <br />
-                Style : 
-                <button id="droit" >Continu</button> 
-                <button id="dash1">Pointillés</button> <!-- stroke-dasharray="5,5" -->
-                <button id="dash2" >Espacés</button> <!-- stroke-dasharray="10,10" -->
-                <button id="dash3">Dessin</button> <!-- stroke-dasharray="20,10,5,5,5,10" -->
-                <hr />
-            </div>
-            <button id="supprimer">Supprimer la forme</button>
-        </div>
+        <script type="text/javascript" src="./assets/js/bundle.js"></script>
     </body>
 </html>
