@@ -160,22 +160,27 @@ class Formes{
 
 function initScript()
 {
-    class BordTaille extends React.Component{
-      render(){
-        if (this.props.name == "+") {
-          return <button id="plus">{this.props.name}</button>;
-        }else if (this.props.name == "-") {
-          return <button id="moins">{this.props.name}</button>;
-        }
-      }
-    }
-
     class Butt extends React.Component{
-      constructor(props){
-        super(props);
-      }
       render(){
-        if (this.props.type == "border") {
+        if (this.props.type == "+") {
+          return <button id="plus">{this.props.type}</button>;
+        }
+        else if (this.props.type == "-") {
+          return <button id="moins">{this.props.type}</button>;
+        }
+        else if (this.props.type == "droit") {
+          return <button id={this.props.type}>{this.props.type}</button>
+        }
+        else if (this.props.type == "pointilles") {
+          return <button id={this.props.type}>{this.props.type}</button>
+        }
+        else if (this.props.type == "espaces") {
+          return <button id={this.props.type}>{this.props.type}</button>
+        }
+        else if (this.props.type == "dessin") {
+          return <button id={this.props.type}>{this.props.type}</button>
+        }
+        else if (this.props.type == "border") {
           const colors = ["border_grey", "border_red", "border_green", "border_blue", "border_yellow", "border_black", "border_white"];
           const listColor = colors.map((color) =>
             <button id={color}>{color}</button>
@@ -229,17 +234,17 @@ function initScript()
             <div id="epais">
                 <p>Ajustez la taille, la couleur et le style de la bordure de la forme sélectionnée</p>
                 Taille : 
-                <BordTaille name="-" />
-                <BordTaille name="+" />
+                <Butt type="-" />
+                <Butt type="+" />
                 <br />
                 Couleur :
                 <Butt type="border" />
                 <br />
                 Style : 
-                <button id="droit">Continu</button> 
-                <button id="dash1">Pointillés</button>
-                <button id="dash2">Espacés</button>
-                <button id="dash3">Dessin</button>
+                <Butt type="droit" />
+                <Butt type="pointilles" />
+                <Butt type="espaces" />
+                <Butt type="dessin" />
                 <hr />
             </div>
             <button id="supprimer">Supprimer la forme</button>
@@ -386,24 +391,24 @@ ReactDOM.render(
       }
     }
 
-    var border_dash1 = document.getElementById('dash1');
-    border_dash1.onclick = function(evt) {
+    var border_pointilles = document.getElementById('pointilles');
+    border_pointilles.onclick = function(evt) {
         for (var i = 0; i <= formeSelected.length; i++){
           var idforme = formeSelected[i].getAttributeNS(null, "id");
           canvas.formes[idforme].changeDash("5,5");
       }
     }
 
-    var border_dash2 = document.getElementById('dash2');
-    border_dash2.onclick = function(evt) {
+    var border_espaces = document.getElementById('espaces');
+    border_espaces.onclick = function(evt) {
         for (var i = 0; i <= formeSelected.length; i++){
           var idforme = formeSelected[i].getAttributeNS(null, "id");
           canvas.formes[idforme].changeDash("10,10");
         }
     }
 
-    var border_dash3 = document.getElementById('dash3');
-    border_dash3.onclick = function(evt) {
+    var border_dessin = document.getElementById('dessin');
+    border_dessin.onclick = function(evt) {
         for (var i = 0; i <= formeSelected.length; i++){
           var idforme = formeSelected[i].getAttributeNS(null, "id");
           canvas.formes[idforme].changeDash("20,10,5,5,5,10");
