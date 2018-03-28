@@ -160,6 +160,45 @@ class Formes{
 
 function initScript()
 {
+    class BordTaille extends React.Component{
+      render(){
+        if (this.props.name == "+") {
+          return <button id="plus">{this.props.name}</button>;
+        }else if (this.props.name == "-") {
+          return <button id="moins">{this.props.name}</button>;
+        }
+      }
+    }
+
+    class Butt extends React.Component{
+      constructor(props){
+        super(props);
+      }
+      render(){
+        if (this.props.type == "border") {
+          const colors = ["border_grey", "border_red", "border_green", "border_blue", "border_yellow", "border_black", "border_white"];
+          const listColor = colors.map((color) =>
+            <button id={color}>{color}</button>
+          );
+          return (
+            <div>
+              {listColor}
+            </div>
+          );
+        }
+        else {
+          const colors = ["grey", "red", "green", "blue", "yellow", "black", "white"];
+          const listColor = colors.map((color) =>
+            <button id={color}>{color}</button>
+          );
+          return (
+            <div>
+              {listColor}
+            </div>
+          );
+        }
+      }
+    }
 
     class App extends React.Component{
     render(){
@@ -167,7 +206,7 @@ function initScript()
             <div>
         <h1>My Drawings</h1>
         <div id="gauche">
-            <svg id="svg" width="100%" height="100%">
+            <svg id="svg" width="100%" height="300px">
                 
             </svg>
         </div>
@@ -180,13 +219,7 @@ function initScript()
             <br />
             <div id="couleur">
                 <p>Cliquez sur les boutons ci-dessous pour changer la couleur de la forme sélectionnée</p>
-                <button id="grey">o</button>
-                <button id="red">o</button>
-                <button id="green">o</button>
-                <button id="blue">o</button>
-                <button id="yellow">o</button>
-                <button id="black">o</button>                
-                <button id="white">o</button>
+                <Butt />
                 <hr />
             </div>
             <button id="rotate">Tourner la forme</button>
@@ -196,17 +229,11 @@ function initScript()
             <div id="epais">
                 <p>Ajustez la taille, la couleur et le style de la bordure de la forme sélectionnée</p>
                 Taille : 
-                <button id="moins">-</button>
-                <button id="plus">+</button>
+                <BordTaille name="-" />
+                <BordTaille name="+" />
                 <br />
                 Couleur :
-                <button id="border_grey">o</button>
-                <button id="border_red">o</button>
-                <button id="border_green">o</button>
-                <button id="border_blue">o</button>
-                <button id="border_yellow">o</button>
-                <button id="border_black">o</button>                
-                <button id="border_white">o</button>
+                <Butt type="border" />
                 <br />
                 Style : 
                 <button id="droit">Continu</button> 
